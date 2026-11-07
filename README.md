@@ -19,6 +19,7 @@ This course focuses on:
 | Day | Topic |
 |---|---|
 | 01 | [Python print() Function](lessons/day-01-print/README.md) |
+| 02 | [Variables and Data Types](Day02/README.md) |
 
 *More lessons coming soon!*
 
