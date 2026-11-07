@@ -435,4 +435,4 @@ This lesson is independently written. Its practice sequence follows the Day 02 s
 - [Python Documentation — `math.pi`](https://docs.python.org/3/library/math.html#math.pi)
 - [30 Days of Python — Asabeneh Yetayeh](https://github.com/Asabeneh/30-Days-Of-Python) — inspiration for the structured learning journey
 
-[← Day 01 — The `print()` Function](../lessons/day-01-print/README.md) · [Course Home](../README.md)
+[← Day 01 — The `print()` Function](../Day01/README.md) · [Course Home](../README.md)
