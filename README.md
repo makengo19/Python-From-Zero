@@ -20,6 +20,7 @@ This course focuses on:
 |---|---|
 | 01 | [Python print() Function](Day01/README.md) |
 | 02 | [Variables and Data Types](Day02/README.md) |
+| 03 | [Python Operators](Day03/README.md) |
 
 *More lessons coming soon!*
 
