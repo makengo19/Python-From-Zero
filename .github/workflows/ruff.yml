@@ -16,4 +16,4 @@ jobs:
         with:
           version: "0.17.4"
           args: check --select E,F,W --output-format=github
-          src: "Day01 Day02 Day03 Day04 tests"
+          src: "Day01 Day02 Day03 Day04 Day05 tests"

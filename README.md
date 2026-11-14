@@ -22,6 +22,7 @@ This course focuses on:
 | 02 | [Variables and Data Types](Day02/README.md) | Assignment, types, conversions, and user input | [examples.py](Day02/examples.py) | [tasks.py](Day02/tasks.py) |
 | 03 | [Python Operators](Day03/README.md) | Arithmetic, comparisons, logic, and membership | [examples.py](Day03/examples.py) | [tasks.py](Day03/tasks.py) |
 | 04 | [Strings](Day04/README.md) | Formatting, indexing, slicing, and string methods | [examples.py](Day04/examples.py) | [tasks.py](Day04/tasks.py) |
+| 05 | [Lists](Day05/README.md) | Indexing, slicing, updating, sorting, and copying lists | [examples.py](Day05/examples.py) | [tasks.py](Day05/tasks.py) |
 
 ## Getting Started
 
@@ -43,7 +44,7 @@ On Windows, use `py -3` in place of `python3` if Python is installed through the
 
 Open the day's `tasks.py` file and replace each `None` with your answer. Keep the starting values and variable names so the checks can read your results. The lesson pages also contain longer practice exercises.
 
-From the repository root, run the checks for all three days.
+From the repository root, run the checks for all days with self-checks.
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -63,7 +64,7 @@ GitHub Actions checks the lesson and test files with Ruff on pull requests. To r
 
 ```bash
 python3 -m pip install ruff==0.17.4
-python3 -m ruff check --select E,F,W Day01 Day02 Day03 Day04 tests
+python3 -m ruff check --select E,F,W Day01 Day02 Day03 Day04 Day05 tests
 ```
 
 ## 📖 Learning Resources

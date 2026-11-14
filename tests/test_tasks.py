@@ -5,6 +5,7 @@ import unittest
 from Day02 import tasks as day02
 from Day03 import tasks as day03
 from Day04 import tasks as day04
+from Day05 import tasks as day05
 
 
 class TestDay02(unittest.TestCase):
@@ -51,3 +52,24 @@ class TestDay04(unittest.TestCase):
 
     def test_tag_line(self):
         self.assertEqual(day04.tag_line, "python / strings / review")
+
+
+class TestDay05(unittest.TestCase):
+    def test_last_topic(self):
+        self.assertEqual(day05.last_topic, "lists")
+
+    def test_middle_topics(self):
+        self.assertEqual(day05.middle_topics, ["variables", "operators", "strings"])
+
+    def test_review_topics(self):
+        self.assertEqual(
+            day05.review_topics,
+            ["variables", "operators", "strings", "lists", "practice"],
+        )
+        self.assertEqual(
+            day05.topics, ["print", "variables", "operators", "strings", "lists"]
+        )
+
+    def test_ranked_scores(self):
+        self.assertEqual(day05.ranked_scores, [20, 18, 12])
+        self.assertEqual(day05.scores, [18, 12, 20])
