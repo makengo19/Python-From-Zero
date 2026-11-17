@@ -24,6 +24,7 @@ This course focuses on:
 | 04 | [Strings](Day04/README.md) | Formatting, indexing, slicing, and string methods | [examples.py](Day04/examples.py) | [tasks.py](Day04/tasks.py) |
 | 05 | [Lists](Day05/README.md) | Indexing, slicing, updating, sorting, and copying lists | [examples.py](Day05/examples.py) | [tasks.py](Day05/tasks.py) |
 | 06 | [Tuples](Day06/README.md) | Creating, indexing, slicing, methods, and unpacking tuples | [examples.py](Day06/examples.py) | [tasks.py](Day06/tasks.py) |
+| 07 | [Sets](Day07/README.md) | Creating sets, adding and removing elements, set operations | [examples.py](Day07/examples.py) | [tasks.py](Day07/tasks.py) |
 ## Getting Started
 
 You need Python 3.10 or newer and Git. The examples and self-checks use only the Python standard library.
