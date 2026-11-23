@@ -1,88 +1,119 @@
-# 🐍 Python From Zero with Makengo
+# Day 10 — Dictionaries
 
-Welcome to **Python From Zero with Makengo!**
+## Goal
 
-A free, beginner-friendly Python course designed to help you learn Python step by step, from the fundamentals to more advanced concepts.
+Learn how to store, read, update, and organize data with Python dictionaries.
 
-## 📚 About This Course
+A **dictionary** stores **key–value pairs**. Keys must be unique and hashable (for example, strings, integers, or tuples of immutable values).
 
-This course focuses on:
-
-- Clear and beginner-friendly explanations
-- Practical Python code examples
-- Understanding how and why Python works
-- Building strong programming fundamentals
-- Learning through real-world examples
-
-## 🗺️ Course Roadmap
-
-| Day | Lesson | What you'll learn | Examples | Tasks |
-|---|---|---|---|---|
-| 01 | [The print() Function](Day01/README.md) | Output, separators, line endings, and escape sequences | [examples.py](Day01/examples.py) | — |
-| 02 | [Variables and Data Types](Day02/README.md) | Assignment, types, conversions, and user input | [examples.py](Day02/examples.py) | [tasks.py](Day02/tasks.py) |
-| 03 | [Python Operators](Day03/README.md) | Arithmetic, comparisons, logic, and membership | [examples.py](Day03/examples.py) | [tasks.py](Day03/tasks.py) |
-| 04 | [Strings](Day04/README.md) | Formatting, indexing, slicing, and string methods | [examples.py](Day04/examples.py) | [tasks.py](Day04/tasks.py) |
-| 05 | [Lists](Day05/README.md) | Indexing, slicing, updating, sorting, and copying lists | [examples.py](Day05/examples.py) | [tasks.py](Day05/tasks.py) |
-| 06 | [Tuples](Day06/README.md) | Creating, indexing, slicing, methods, and unpacking tuples | [examples.py](Day06/examples.py) | [tasks.py](Day06/tasks.py) |
-| 07 | [Sets](Day07/README.md) | Creating sets, adding and removing elements, set operations | [examples.py](Day07/examples.py) | [tasks.py](Day07/tasks.py) |
-| 08 | [Dictionaries](Day08/README.md) | Key-value pairs, lookups, updates, and iteration | [examples.py](Day08/examples.py) | [tasks.py](Day08/tasks.py) |
-
-## Getting Started
-
-You need Python 3.10 or newer and Git. The examples and self-checks use only the Python standard library.
-
-Clone the repository and run a lesson example from the project directory.
-
-```bash
-git clone https://github.com/makengo19/Python-From-Zero.git
-cd Python-From-Zero
-python3 --version
-python3 Day01/examples.py
-python3 Day04/examples.py
+```python
+student = {
+    "name": "Amina",
+    "age": 19,
+    "major": "IT"
+}
+print(student["name"])  # Amina
 ```
 
-On Windows, use `py -3` in place of `python3` if Python is installed through the Python launcher.
+## 1. Create a dictionary
 
-## Practice and Check Your Work
-
-Open the day's `tasks.py` file and replace each `None` with your answer. Keep the starting values and variable names so the checks can read your results. The lesson pages also contain longer practice exercises.
-
-From the repository root, run the checks for all days with self-checks.
-
-```bash
-python3 -m unittest discover -s tests -v
+```python
+person = {"name": "Ali", "city": "Almaty"}
+empty = {}
 ```
 
-To check one day, add its test class name as a filter.
+## 2. Read values
 
-```bash
-python3 -m unittest discover -s tests -v -k TestDay04
+```python
+print(person["name"])            # Ali
+print(person.get("country"))      # None (no KeyError)
+print(person.get("country", "KZ")) # KZ
 ```
 
-Unfinished answers fail their checks. Each test name identifies the result to review. The checks compare results for the starter inputs, so use the operations requested in the task even if another expression gives the same result.
+Use `dict[key]` when the key must exist. Use `dict.get(key, default)` when a key may be missing.
 
-## Code Style
+## 3. Add and update values
 
-GitHub Actions checks the lesson and test files with Ruff on pull requests. To run the same check locally, install Ruff and run it from the repository root.
-
-```bash
-python3 -m pip install ruff==0.17.4
-python3 -m ruff check --select E,F,W Day01 Day02 Day03 Day04 Day05 tests
+```python
+person["age"] = 18       # Add
+person["city"] = "Astana" # Update
 ```
 
-## 📖 Learning Resources
+## 4. Remove values
 
-This independent course is informed by:
+```python
+age = person.pop("age")
+del person["city"]
+```
 
-- [30 Days of Python](https://github.com/Asabeneh/30-Days-Of-Python)
-- [Metanit Python Tutorial](https://metanit.com/python/tutorial/)
-- [W3Schools Python Tutorial](https://www.w3schools.com/python/)
-- [Official Python Documentation](https://docs.python.org/3/)
+`pop()` returns the removed value. `del` removes a key without returning it.
 
-The explanations and learning materials in this repository are developed independently.
+## 5. Loop through a dictionary
 
-## 👨‍💻 Author
+```python
+scores = {"math": 90, "python": 95}
 
-Created by **Makengo**.
+for subject in scores:               # Keys
+    print(subject)
 
-Learn Python. Practice consistently. Build real skills.
+for score in scores.values():        # Values
+    print(score)
+
+for subject, score in scores.items(): # Key–value pairs
+    print(subject, score)
+```
+
+## 6. Useful operations
+
+```python
+print("math" in scores)  # True: checks keys
+print(len(scores))       # 2
+print(list(scores.keys()))
+print(list(scores.values()))
+```
+
+## 7. Dictionary comprehension
+
+```python
+squares = {number: number ** 2 for number in range(1, 6)}
+print(squares)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+```
+
+## 8. Nested dictionaries
+
+```python
+users = {
+    "ali": {"age": 18, "active": True},
+    "amina": {"age": 19, "active": False}
+}
+print(users["ali"]["age"])  # 18
+```
+
+## Common mistakes
+
+- Looking up a missing key with `dict[key]` raises `KeyError`.
+- Dictionary keys cannot be lists or other unhashable objects.
+- Assigning the same key again **replaces** its previous value.
+- `"value" in dictionary` checks **keys**, not values.
+
+## Files
+
+- [`examples.py`](examples.py) — working code examples.
+- [`tasks.py`](tasks.py) — eight exercises to solve yourself.
+
+## Run
+
+From the repository root:
+
+```bash
+python3 Day10/examples.py
+python3 Day10/tasks.py
+```
+
+## Checklist
+
+- [ ] Create dictionaries and get values safely.
+- [ ] Add, update, and delete pairs.
+- [ ] Use `keys()`, `values()`, and `items()`.
+- [ ] Write a dictionary comprehension.
+- [ ] Solve the exercises in `tasks.py`.
